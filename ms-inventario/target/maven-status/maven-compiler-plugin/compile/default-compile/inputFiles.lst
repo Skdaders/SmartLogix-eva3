@@ -1,0 +1,8 @@
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\controller\InventarioController.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\repository\InventarioRepository.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\dto\InventarioDTO.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\exception\GlobalExceptionHandler.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\service\InventarioService.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\model\Producto.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\MsInventarioApplication.java
+C:\Users\Tomas\Desktop\eva3\ms-inventario\src\main\java\cl\duoc\smartlogix\inventario\exception\ProductoNotFoundException.java

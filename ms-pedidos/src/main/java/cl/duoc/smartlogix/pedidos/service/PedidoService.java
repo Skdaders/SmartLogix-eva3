@@ -4,7 +4,6 @@ import cl.duoc.smartlogix.pedidos.dto.PedidoDTO;
 import cl.duoc.smartlogix.pedidos.factory.PedidoFactory;
 import cl.duoc.smartlogix.pedidos.model.Pedido;
 import cl.duoc.smartlogix.pedidos.repository.PedidoRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,14 +11,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 public class PedidoService {
 
     private final PedidoRepository pedidoRepository;
 
+    public PedidoService(PedidoRepository pedidoRepository) {
+        this.pedidoRepository = pedidoRepository;
+    }
+
     @Transactional
     public PedidoDTO.PedidoResponse crearPedido(PedidoDTO.PedidoRequest request) {
-        // Patrón Factory Method: delega la creación al tipo correcto
         Pedido pedido = PedidoFactory.fabricar(
                 request.getTipo(),
                 request.getClienteId(),

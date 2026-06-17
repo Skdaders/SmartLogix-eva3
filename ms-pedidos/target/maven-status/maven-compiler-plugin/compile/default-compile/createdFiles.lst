@@ -1,0 +1,14 @@
+cl\duoc\smartlogix\pedidos\factory\PedidoFactory.class
+cl\duoc\smartlogix\pedidos\factory\PedidoNormalFactory.class
+cl\duoc\smartlogix\pedidos\dto\PedidoDTO$PedidoResponse.class
+cl\duoc\smartlogix\pedidos\service\PedidoService.class
+cl\duoc\smartlogix\pedidos\dto\PedidoDTO.class
+cl\duoc\smartlogix\pedidos\dto\PedidoDTO$PedidoRequest.class
+cl\duoc\smartlogix\pedidos\MsPedidosApplication.class
+cl\duoc\smartlogix\pedidos\model\Pedido.class
+cl\duoc\smartlogix\pedidos\repository\PedidoRepository.class
+cl\duoc\smartlogix\pedidos\controller\PedidoController.class
+cl\duoc\smartlogix\pedidos\factory\PedidoUrgenteFactory.class
+cl\duoc\smartlogix\pedidos\factory\PedidoMayoristaFactory.class
+cl\duoc\smartlogix\pedidos\model\Pedido$EstadoPedido.class
+cl\duoc\smartlogix\pedidos\dto\PedidoDTO$CambioEstadoRequest.class

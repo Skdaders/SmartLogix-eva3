@@ -4,7 +4,6 @@ import cl.duoc.smartlogix.bff.dto.BffDTO;
 import cl.duoc.smartlogix.bff.service.BffService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +12,15 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/bff")
-@RequiredArgsConstructor
 @Tag(name = "BFF SmartLogix", description = "Backend For Frontend — agrega datos para el frontend React")
 @CrossOrigin(origins = "*")
 public class BffController {
 
     private final BffService bffService;
+
+    public BffController(BffService bffService) {
+        this.bffService = bffService;
+    }
 
     @GetMapping("/dashboard")
     @Operation(summary = "Dashboard consolidado: bajo stock + pedidos recientes")

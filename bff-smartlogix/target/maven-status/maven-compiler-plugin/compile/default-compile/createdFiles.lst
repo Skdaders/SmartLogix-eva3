@@ -1,0 +1,9 @@
+cl\duoc\smartlogix\bff\dto\BffDTO.class
+cl\duoc\smartlogix\bff\service\BffService$2.class
+cl\duoc\smartlogix\bff\BffSmartlogixApplication.class
+cl\duoc\smartlogix\bff\controller\BffController.class
+cl\duoc\smartlogix\bff\dto\BffDTO$ProductoDetalleResponse.class
+cl\duoc\smartlogix\bff\dto\BffDTO$DashboardResponse.class
+cl\duoc\smartlogix\bff\service\BffService$1.class
+cl\duoc\smartlogix\bff\config\RestTemplateConfig.class
+cl\duoc\smartlogix\bff\service\BffService.class

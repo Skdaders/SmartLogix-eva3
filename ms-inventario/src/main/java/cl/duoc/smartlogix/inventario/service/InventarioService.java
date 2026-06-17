@@ -4,7 +4,6 @@ import cl.duoc.smartlogix.inventario.dto.InventarioDTO;
 import cl.duoc.smartlogix.inventario.exception.ProductoNotFoundException;
 import cl.duoc.smartlogix.inventario.model.Producto;
 import cl.duoc.smartlogix.inventario.repository.InventarioRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,12 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 public class InventarioService {
 
     private final InventarioRepository inventarioRepository;
 
-    // ── Obtener todos los productos ──────────────────────────────────────────
+    public InventarioService(InventarioRepository inventarioRepository) {
+        this.inventarioRepository = inventarioRepository;
+    }
+
     public List<InventarioDTO.ProductoResponse> listarTodos() {
         return inventarioRepository.findAll()
                 .stream()
@@ -25,14 +26,12 @@ public class InventarioService {
                 .collect(Collectors.toList());
     }
 
-    // ── Obtener producto por ID ──────────────────────────────────────────────
     public InventarioDTO.ProductoResponse obtenerPorId(Long id) {
         Producto producto = inventarioRepository.findById(id)
                 .orElseThrow(() -> new ProductoNotFoundException(id));
         return toResponse(producto);
     }
 
-    // ── Consultar stock de un producto (usado por ms-pedidos y BFF) ─────────
     public InventarioDTO.StockResponse obtenerStock(Long productoId) {
         Producto producto = inventarioRepository.findById(productoId)
                 .orElseThrow(() -> new ProductoNotFoundException(productoId));
@@ -43,7 +42,6 @@ public class InventarioService {
         );
     }
 
-    // ── Crear producto ───────────────────────────────────────────────────────
     @Transactional
     public InventarioDTO.ProductoResponse crearProducto(InventarioDTO.ProductoRequest request) {
         if (inventarioRepository.existsByCodigo(request.getCodigo())) {
@@ -59,7 +57,6 @@ public class InventarioService {
         return toResponse(inventarioRepository.save(producto));
     }
 
-    // ── Actualizar stock (ENTRADA o SALIDA) ──────────────────────────────────
     @Transactional
     public InventarioDTO.StockResponse actualizarStock(InventarioDTO.StockUpdateRequest request) {
         Producto producto = inventarioRepository.findById(request.getProductoId())
@@ -84,7 +81,6 @@ public class InventarioService {
         );
     }
 
-    // ── Productos con bajo stock ─────────────────────────────────────────────
     public List<InventarioDTO.ProductoResponse> listarBajoStock() {
         return inventarioRepository.findAll()
                 .stream()
@@ -93,7 +89,6 @@ public class InventarioService {
                 .collect(Collectors.toList());
     }
 
-    // ── Eliminar producto ────────────────────────────────────────────────────
     @Transactional
     public void eliminarProducto(Long id) {
         if (!inventarioRepository.existsById(id)) {
@@ -102,7 +97,6 @@ public class InventarioService {
         inventarioRepository.deleteById(id);
     }
 
-    // ── Mapper entidad → DTO ─────────────────────────────────────────────────
     private InventarioDTO.ProductoResponse toResponse(Producto p) {
         return new InventarioDTO.ProductoResponse(
                 p.getId(),

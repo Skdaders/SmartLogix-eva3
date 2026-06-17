@@ -1,0 +1,12 @@
+cl\duoc\smartlogix\inventario\dto\InventarioDTO$ProductoResponse.class
+cl\duoc\smartlogix\inventario\exception\GlobalExceptionHandler.class
+cl\duoc\smartlogix\inventario\service\InventarioService.class
+cl\duoc\smartlogix\inventario\repository\InventarioRepository.class
+cl\duoc\smartlogix\inventario\exception\ProductoNotFoundException.class
+cl\duoc\smartlogix\inventario\dto\InventarioDTO$ProductoRequest.class
+cl\duoc\smartlogix\inventario\MsInventarioApplication.class
+cl\duoc\smartlogix\inventario\dto\InventarioDTO$StockResponse.class
+cl\duoc\smartlogix\inventario\controller\InventarioController.class
+cl\duoc\smartlogix\inventario\model\Producto.class
+cl\duoc\smartlogix\inventario\dto\InventarioDTO.class
+cl\duoc\smartlogix\inventario\dto\InventarioDTO$StockUpdateRequest.class
